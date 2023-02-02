@@ -1,0 +1,11 @@
+<!-- Templating -->
+<p>{{ conteudo }}</p>
+<p>{{ conteudo.toUpperCase() }}</p>
+<p>{{ conteudo2 }}</p>
+<!-- Pipe -->
+<p>{{ conteudo | uppercase }}</p>
+<p>{{ mostra_conteudo() }}</p>
+
+<!-- event binding -->
+<!-- <p><button (click)="conteudo='lixo'">Muda propriedade</button></p> -->
+<p><button (click)="muda_conteudo(); conteudo2='Outro'">Muda propriedade</button></p>
