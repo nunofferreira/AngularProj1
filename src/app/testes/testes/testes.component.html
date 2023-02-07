@@ -9,3 +9,25 @@
 <!-- event binding -->
 <!-- <p><button (click)="conteudo='lixo'">Muda propriedade</button></p> -->
 <p><button (click)="muda_conteudo(); conteudo2='Outro'">Muda propriedade</button></p>
+
+<!-- <p><img src="/assets/galeria1.jpg" alt=""></p> -->
+<!-- <p><img src="{{ imagem }}" alt=""></p> →SINTAXE + USADA-->
+<!-- <p><img src="/assets/{{ imagem2}}" alt=""></p> -->
+
+<!-- Property binding -->
+<!-- <p><img [src]="imagem" alt=""></p> →SINTAXE ALTERNATIVA-->
+<!-- <p><img [src]="'/assets/galeria1.jpg'" alt=""></p> →NÃO USAR ESTA SINTAXE-->
+
+<p><img [src]="'/assets/'+imagem2"></p>
+
+<p><button (click)="muda_imagem();">Muda Imagem</button></p>
+
+<!-- toggle das imagens -->
+<p><button (click)="toggleImagem();">Toggle Imagem</button></p>
+
+<p><button (click)="toggleConteudo();">{{ this.escondido ? 'Mostrar' : 'Esconder'}}</button></p>
+<!-- <p><button (click)="toggleConteudo();">{{ mostraButtonLabel() }}</button></p> -->
+<section class="conteudo" [hidden]="escondido">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, ipsa! Iure minima eveniet quis accusantium
+        deserunt quia qui eos eius maxime modi reprehenderit, libero hic, laborum ex ipsam quos ut.</p>
+</section>

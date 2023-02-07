@@ -1,0 +1,45 @@
+<!-- # - identifica uma template reference variable -->
+<p><label for="pesquisa"></label>
+    <input type="text" id="pesquisa" #cpesquisa (input)="processaPesquisa(cpesquisa.value)"> <input type="button"
+        value="Pesquisa" (click)="processaPesquisa(cpesquisa.value)">
+    <input type="button" value="Limpa Pesquisa" (click)="limpaPesquisa(); cpesquisa.value=''">
+</p>
+<p *ngIf="listaPessoas.length===0">
+    Não existem pessoas que obedeçam ao critério de pesquisa!
+</p>
+<table id="tabelaDados">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data nascimento</th>
+            <th>casado</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pessoa of listaPessoas">
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.idade }}</td>
+            <td>{{ pessoa.data_nascimento | date : 'yyyy-MM-dd'}}</td>
+            <!-- <td>{{ pessoa.casado }}</td> -->
+
+            <!-- <td>{{ pessoa.casado ? '&#10004;' : '&#10005;'}}</td> -->
+
+            <!-- <td *ngIf="pessoa.casado">&#10004;</td>
+            <td *ngIf="!pessoa.casado">&#10005;</td> -->
+
+            <td>
+                <ng-container *ngIf="pessoa.casado">&#10004;</ng-container>
+                <ng-template #naoCasado>&#10005;</ng-template>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
+    <tfoot class="table-dark">
+        <tr>
+            <td colspan="5">Total de pessoas: {{ listaPessoas.length }}
+        </tr>
+    </tfoot>
+</table>
+<!-- <p><button (click)="criarPessoa()">Criar Pessoa</button></p> -->
