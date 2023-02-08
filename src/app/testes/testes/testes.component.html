@@ -2,21 +2,25 @@
 <p>{{ conteudo }}</p>
 <p>{{ conteudo.toUpperCase() }}</p>
 <p>{{ conteudo2 }}</p>
+
 <!-- Pipe -->
 <p>{{ conteudo | uppercase }}</p>
+<p>{{ conteudo | lowercase }}</p>
+<p>{{ conteudo | titlecase }}</p>
+
 <p>{{ mostra_conteudo() }}</p>
 
 <!-- event binding -->
 <!-- <p><button (click)="conteudo='lixo'">Muda propriedade</button></p> -->
 <p><button (click)="muda_conteudo(); conteudo2='Outro'">Muda propriedade</button></p>
 
-<!-- <p><img src="/assets/galeria1.jpg" alt=""></p> -->
-<!-- <p><img src="{{ imagem }}" alt=""></p> →SINTAXE + USADA-->
-<!-- <p><img src="/assets/{{ imagem2}}" alt=""></p> -->
+<!-- <p><img src="/assets/galeria1.jpg"></p> -->
+<!-- <p><img src="{{ imagem }}"></p> →SINTAXE mais usada-->
+<!-- <p><img src="/assets/{{ imagem2}}"></p> -->
 
 <!-- Property binding -->
-<!-- <p><img [src]="imagem" alt=""></p> →SINTAXE ALTERNATIVA-->
-<!-- <p><img [src]="'/assets/galeria1.jpg'" alt=""></p> →NÃO USAR ESTA SINTAXE-->
+<!-- <p><img [src]="imagem"></p> →SINTAXE ALTERNATIVA-->
+<!-- <p><img [src]="'/assets/galeria1.jpg'"></p> →NÃO USAR ESTA SINTAXE-->
 
 <p><img [src]="'/assets/'+imagem2"></p>
 

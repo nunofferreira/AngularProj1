@@ -1,0 +1,30 @@
+<p *ngIf="listaPessoas.length===0">
+    Não existem pessoas que obedeçam ao critério de pesquisa!
+</p>
+<table id="tabelaDados">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Data nascimento</th>
+            <th>casado</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pessoa of listaPessoas">
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.idade }}</td>
+            <td>{{ pessoa.data_nascimento | date : 'yyyy-MM-dd'}}</td>
+
+            <td>{{ pessoa.casado ? '&#10004;' : '&#10005;'}}</td>
+
+            <td><button type="button" (click)="eliminaPessoa(pessoa.id)">X</button></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5">Total de pessoas: {{ listaPessoas.length }}
+        </tr>
+    </tfoot>
+</table>

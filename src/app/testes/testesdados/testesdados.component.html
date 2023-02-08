@@ -1,9 +1,17 @@
 <!-- # - identifica uma template reference variable -->
-<p><label for="pesquisa"></label>
+<!-- <p><label for="pesquisa">Pesquisa</label>
     <input type="text" id="pesquisa" #cpesquisa (input)="processaPesquisa(cpesquisa.value)"> <input type="button"
         value="Pesquisa" (click)="processaPesquisa(cpesquisa.value)">
     <input type="button" value="Limpa Pesquisa" (click)="limpaPesquisa(); cpesquisa.value=''">
+</p> -->
+
+<!-- [()] - two-way data binding-->
+<p><label for="pesquisa">Pesquisa</label>
+    <input type="text" id="pesquisa" [(ngModel)]="cpesquisa" (input)="processaPesquisa()"> <input type="button"
+        value="Pesquisa" (click)="processaPesquisa()">
+    <input type="button" value="Limpa Pesquisa" (click)="limpaPesquisa()">
 </p>
+
 <p *ngIf="listaPessoas.length===0">
     Não existem pessoas que obedeçam ao critério de pesquisa!
 </p>
@@ -33,10 +41,10 @@
                 <ng-container *ngIf="pessoa.casado">&#10004;</ng-container>
                 <ng-template #naoCasado>&#10005;</ng-template>
             </td>
-            <td>&nbsp;</td>
+            <td><button type="button" (click)="eliminaPessoa(pessoa.id!)">X</button></td>
         </tr>
     </tbody>
-    <tfoot class="table-dark">
+    <tfoot>
         <tr>
             <td colspan="5">Total de pessoas: {{ listaPessoas.length }}
         </tr>

@@ -1,0 +1,34 @@
+#tabelaDados {
+    border-collapse: collapse;
+}
+
+#tabelaDados,
+#tabelaDados th,
+#tabelaDados td {
+    border: 1px solid #000;
+}
+
+#tabelaDados th,
+#tabelaDados td {
+    padding: 10px 20px;
+}
+
+#tabelaDados th {
+    background-color: black;
+    color: white;
+}
+
+#tabelaDados tbody tr:nth-of-type(even) {
+    background-color: #aaa;
+}
+
+#tabelaDados tbody tr:hover {
+    cursor: pointer;
+    background-color: #666;
+    color: white;
+}
+
+#tabelaDados tfoot tr {
+    background-color: #666;
+    color: white;
+}

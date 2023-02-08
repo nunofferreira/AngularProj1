@@ -6,11 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./testes.component.css']
 })
 export class TestesComponent {
-  // TypeScript -tipos de dados
+  // TypeScript - tipos de dados
   conteudo: string = "Teste";
   // variável que pode conter qualquer tipo de dados
   outra: any;
 
+  // Como regra geral não se deve mudar os dados no controlador, mas na view
   conteudo2: string = "Teste".toUpperCase();
 
   imagem: string = "/assets/galeria1.jpg";
@@ -51,8 +52,12 @@ export class TestesComponent {
     this.escondido = !this.escondido;
   }
 
-  // mostraButtonLabel(){
-  //   if (this.)
+  // mostraButtonLabel() {
+  //   if (this.escondido) {
+  //     return 'Mostrar';
+  //   } else {
+  //     return 'Esconder';
+  //   }
   // }
 }
 
