@@ -1,21 +1,7 @@
-<p>collapsible works!</p>
-
-<section class="collapsible">
+<div class="collapsible">
     <div class="collapsible-header" (click)="toggle()">{{header}}
     </div>
     <div class="colapsible-body" [hidden]="!isOpen">
         <ng-content></ng-content>
     </div>
-</section>
-
-<!-- <app-accordion>
-    <app-collapsible header="Header 1">
-        Content 1
-    </app-collapsible>
-    <app-collapsible header="Header 2">
-        Content 2
-    </app-collapsible>
-    <app-collapsible header="Header 3">
-        Content 3
-    </app-collapsible>
-</app-accordion> -->
+</div>
