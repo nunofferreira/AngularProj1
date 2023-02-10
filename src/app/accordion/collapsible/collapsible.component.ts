@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-collapsible',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./collapsible.component.css']
 })
 export class CollapsibleComponent {
+  @Input() header: string = '';
+  isOpen = false;
 
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
 }

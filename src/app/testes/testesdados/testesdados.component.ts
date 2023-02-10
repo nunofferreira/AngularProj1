@@ -37,7 +37,7 @@ export class TestesdadosComponent implements OnInit, OnDestroy { // implements �
   //     data_nascimento: new Date('1960'),
   //     casado: true
   //   })
-  //   // change detection
+  //   // change detection → Angular está à escuta de alterações às variáveis
   // }
 
   // processaPesquisa(valor: string) {
@@ -47,10 +47,11 @@ export class TestesdadosComponent implements OnInit, OnDestroy { // implements �
   // }
 
   processaPesquisa() {
+    // console.log("clicou!")
     this.listaPessoas = this.listaPessoasOriginal.filter(pessoa => pessoa.nome.toUpperCase().includes(this.cpesquisa.toUpperCase()));
   }
 
-  limpaPesquisa() {
+  limpaPesquisa() { // [...] → faz uma cópia do array
     this.listaPessoas = [...this.listaPessoasOriginal];
     this.cpesquisa = '';
   }
@@ -59,11 +60,19 @@ export class TestesdadosComponent implements OnInit, OnDestroy { // implements �
     // this.listaPessoasOriginal = this.listaPessoasOriginal.filter(pessoa => pessoa.id !== id);
     // this.listaPessoas = [...this.listaPessoasOriginal]; // ← este é o mais correto
 
-    // retorna -1 caso não encontre
-    let posicao = this.listaPessoasOriginal.findIndex(pessoa => pessoa.id === id);
-    this.listaPessoasOriginal.splice(posicao, 1);
-
-
+    if (typeof id === "number") { // este if é para testar o tipo de dados 
+      // retorna -1 caso não encontre
+      let posicao = this.listaPessoasOriginal.findIndex(pessoa => pessoa.id === id);
+      if (posicao !== -1) {
+        this.listaPessoasOriginal.splice(posicao, 1);
+        this.listaPessoas = [...this.listaPessoasOriginal]
+      } else {
+        // ex: "eliminaPessoa(25)"
+        alert("Id Inexistente!");
+      }
+    } else {
+      // ex: "eliminaPessoa(undefined)"
+      ("Valor não e numérico!")
+    }
   }
-
 }

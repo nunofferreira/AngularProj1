@@ -1,5 +1,6 @@
 <h1>Gestão de pessoas</h1>
-<app-pessoaspesquisa></app-pessoaspesquisa>
+<app-pessoasinsere></app-pessoasinsere>
+<app-pessoaspesquisa (palavraPesquisa)="pesquisar ($event)"></app-pessoaspesquisa>
 <!-- "listaPessoas" corresponde a uma propriedade da classe (componente-pai) -->
 <!-- [listaPessoas] corresponde a um @Input do componente pessoasTabela (componente-filho) -->
-<app-pessoastabela [listaPessoas]="listaPessoas"></app-pessoastabela>
+<app-pessoastabela [listaPessoas]="listaPessoas" (idAEliminar)="deletePessoa($event)"></app-pessoastabela>

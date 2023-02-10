@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Pessoa } from 'src/app/shared/pessoa.type';
 
 @Component({
@@ -8,10 +8,12 @@ import { Pessoa } from 'src/app/shared/pessoa.type';
 })
 export class PessoastabelaComponent {
 
-
   @Input() listaPessoas: Pessoa[] = [];
+  @Output() idAEliminar: EventEmitter<number> = new EventEmitter();
 
   eliminaPessoa(id: number | undefined) {
-
+    // id - payload
+    this.idAEliminar.emit(id);
   }
+
 }

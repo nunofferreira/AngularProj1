@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pessoaspesquisa',
@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 export class PessoaspesquisaComponent {
   cpesquisa: string = "";
 
+  @Output() palavraPesquisa: EventEmitter<string> = new EventEmitter;
+
   processaPesquisa() {
+    this.palavraPesquisa.emit(this.cpesquisa)
   }
 
   limpaPesquisa() {
-
+    this.cpesquisa = '';
+    this.palavraPesquisa.emit(this.cpesquisa);
   }
 
 }

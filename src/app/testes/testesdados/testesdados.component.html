@@ -12,11 +12,11 @@
     <input type="button" value="Limpa Pesquisa" (click)="limpaPesquisa()">
 </p>
 
-<p *ngIf="listaPessoas.length===0">
+<p *ngIf="listaPessoas.length === 0">
     Não existem pessoas que obedeçam ao critério de pesquisa!
 </p>
-<table id="tabelaDados">
-    <thead class="table-dark">
+<table id="tabelaDados" *ngIf="listaPessoas.length > 0">
+    <thead>
         <tr>
             <th>Nome</th>
             <th>Idade</th>
@@ -33,6 +33,7 @@
             <!-- <td>{{ pessoa.casado }}</td> -->
 
             <!-- <td>{{ pessoa.casado ? '&#10004;' : '&#10005;'}}</td> -->
+            <!-- ↑↑↑melhor alternativa com o operador ternário -->
 
             <!-- <td *ngIf="pessoa.casado">&#10004;</td>
             <td *ngIf="!pessoa.casado">&#10005;</td> -->
@@ -41,6 +42,7 @@
                 <ng-container *ngIf="pessoa.casado">&#10004;</ng-container>
                 <ng-template #naoCasado>&#10005;</ng-template>
             </td>
+
             <td><button type="button" (click)="eliminaPessoa(pessoa.id!)">X</button></td>
         </tr>
     </tbody>
