@@ -1,7 +1,7 @@
-<div class="collapsible">
+<section class="collapsible">
     <div class="collapsible-header" (click)="toggle()">{{header}}
     </div>
-    <div class="colapsible-body" [hidden]="!isOpen">
+    <div class="collapsible-body" *ngIf="isOpen">
         <ng-content></ng-content>
     </div>
-</div>
+</section>

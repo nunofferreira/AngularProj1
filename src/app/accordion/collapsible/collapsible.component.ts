@@ -11,5 +11,8 @@ export class CollapsibleComponent {
 
   toggle() {
     this.isOpen = !this.isOpen;
+    // if (this.isOpen) {
+    //   this.collapsibles.closeAll();
+    // }
   }
 }

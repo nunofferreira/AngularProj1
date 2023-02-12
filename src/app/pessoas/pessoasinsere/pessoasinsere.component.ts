@@ -8,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class PessoasinsereComponent implements OnInit {
 
-  formPessoas!: FormGroup
+  formPessoas!: FormGroup;
 
   ngOnInit() {
     this.formPessoas = new FormGroup({

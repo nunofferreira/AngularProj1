@@ -7,7 +7,7 @@ import { CollapsibleComponent } from '../collapsible/collapsible.component';
   styleUrls: ['./accordion.component.css']
 })
 export class AccordionComponent {
-  @ViewChildren(CollapsibleComponent) collapsibles: QueryList<CollapsibleComponent> = new QueryList<CollapsibleComponent>();
+  @ViewChildren(CollapsibleComponent) collapsibles!: QueryList<CollapsibleComponent>// = new QueryList<CollapsibleComponent>();
 
   closeAll() {
     this.collapsibles.forEach(collapsible => collapsible.isOpen = false);

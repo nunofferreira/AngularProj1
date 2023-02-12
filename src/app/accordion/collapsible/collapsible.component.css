@@ -1,16 +1,15 @@
 .collapsible {
     width: 300px;
-    border: 1px solid #ddd;
+    border: 1px solid white;
 }
 
 .collapsible-header {
     padding: 10px;
     cursor: pointer;
-    background-color: #f5f5f5;
+    background-color: blue;
 }
 
 .collapsible-body {
-    background-color: #fff;
-    height: 100px;
+    background-color: white;
     padding: 10px;
 }
