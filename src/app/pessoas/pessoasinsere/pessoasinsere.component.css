@@ -1,0 +1,24 @@
+/* .ng-invalid:last-child {
+    background-color: yellow;
+} */
+
+/* input.ng-invalid {
+    background-color: yellow;
+} */
+
+/* .ng-invalid:not(form) {
+    background-color: yellow;
+} */
+
+.ng-touched.ng-invalid:not(form) {
+    background-color: yellow;
+}
+
+.identificaObrigatorio {
+    display: none;
+    color: aquamarine;
+}
+
+.ng-touched.ng-invalid:not(form)~span {
+    display: inline;
+}

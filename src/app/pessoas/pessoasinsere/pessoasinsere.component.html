@@ -1,16 +1,29 @@
 <h3>Registo de pessoas</h3>
-<form [formGroup]="formPessoas" (ngSubmit)="inserePessoa">
-    <p><label for="nome">Nome</label> <input type="text" id="nome" formControlName="nome"></p>
+<form [formGroup]="formPessoas" (ngSubmit)="inserePessoa()">
+    <p><label for="nome">Nome</label> <input type="text" id="nome" formControlName="nome"
+            placeholder="introduza o seu nome"> <span class="identificaObrigatorio">*</span></p>
+    <small *ngIf="nome?.touched && nome?.invalid">
+        <ng-container *ngIf="nome?.hasError('required')">O campo 'Nome' é de
+            preenchimento obrigatório!</ng-container>
+        <ng-container *ngIf="nome?.errors?.['minlength']">O campo 'Nome' tem que possuir no mínimo 3
+            caracteres!</ng-container>
+    </small>
 
     <p><label for="idade">Idade</label> <input type="number" id="idade" formControlName="idade"></p>
+    <small *ngIf="formPessoas.get('idade')?.touched && formPessoas.get('idade')?.invalid">O campo 'Idade' é de
+        preenchimento obrigatório</small>
 
     <p><label for="data_nascimento">Data de nascimento</label> <input type="date" id="data_nascimento"
             formControlName="data_nascimento"></p>
 
     <p><label for="casado">Casado</label> <input type="checkbox" id="casado" formControlName="casado"></p>
 
-    <p><input type="submit" value="Registar Pessoa"></p>
+    <p><input type="submit" value="Registar Pessoa" [disabled]="formPessoas.invalid"></p>
 </form>
 
 <!-- para efeitos de debugging -->
 <pre>{{ formPessoas.value | json }}</pre>
+<pre>{{ formPessoas.status | json }}</pre>
+<pre>{{ formPessoas.valid | json }}</pre>
+<pre>{{ formPessoas.invalid | json }}</pre>
+<pre>Nome - Invalid: {{ formPessoas.get('nome')?.invalid }}</pre>

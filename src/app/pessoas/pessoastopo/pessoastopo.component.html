@@ -1,5 +1,5 @@
 <h1>Gestão de pessoas</h1>
-<app-pessoasinsere></app-pessoasinsere>
+<app-pessoasinsere (novaPessoa)="inserePessoa($event)"></app-pessoasinsere>
 <app-pessoaspesquisa (palavraPesquisa)="pesquisar ($event)"></app-pessoaspesquisa>
 <!-- "listaPessoas" corresponde a uma propriedade da classe (componente-pai) -->
 <!-- [listaPessoas] corresponde a um @Input do componente pessoasTabela (componente-filho) -->

@@ -11,6 +11,9 @@ import { PessoastabelaComponent } from './pessoas/pessoastabela/pessoastabela.co
 import { PessoasinsereComponent } from './pessoas/pessoasinsere/pessoasinsere.component';
 import { AccordionComponent } from './accordion/accordion/accordion.component';
 import { CollapsibleComponent } from './accordion/collapsible/collapsible.component';
+import { Accordion2Component } from './accordion2/accordion2/accordion2.component';
+import { Accordion2itemComponent } from './accordion2/accordion2item/accordion2item.component';
+import { Accordion2testComponent } from './accordion2/accordion2test/accordion2test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { CollapsibleComponent } from './accordion/collapsible/collapsible.compon
     PessoastabelaComponent,
     PessoasinsereComponent,
     AccordionComponent,
-    CollapsibleComponent
+    CollapsibleComponent,
+    Accordion2Component,
+    Accordion2itemComponent,
+    Accordion2testComponent
   ],
   imports: [
     BrowserModule,
