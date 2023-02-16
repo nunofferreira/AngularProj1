@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Accordion2Component } from './accordion2.component';
+import { PessoadetalheComponent } from './pessoadetalhe.component';
 
-describe('Accordion2Component', () => {
-  let component: Accordion2Component;
-  let fixture: ComponentFixture<Accordion2Component>;
+describe('PessoadetalheComponent', () => {
+  let component: PessoadetalheComponent;
+  let fixture: ComponentFixture<PessoadetalheComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Accordion2Component ]
+      declarations: [ PessoadetalheComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Accordion2Component);
+    fixture = TestBed.createComponent(PessoadetalheComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

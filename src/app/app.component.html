@@ -1,12 +1,29 @@
 <header>
     <h1>Primavera Software</h1>
 </header>
+
+<nav id="menuTopo">
+    <ul>
+        <!-- [routerLinkActive="activa especial"] para mais que uma ... -->
+        <li><a routerLinkActive="activa" routerLink="" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+        <li><a routerLinkActive="activa" routerLink="testes">Testes</a></li>
+        <!-- <li><a href="testes">Testes</a></li> nunca fazer assim-->
+        <li><a routerLinkActive="activa" routerLink="testesdados">Testes Dados</a></li>
+        <li><a routerLinkActive="activa" [routerLinkActiveOptions]="{ exact: true }" routerLink="/pessoas">Pessoas</a>
+        </li>
+        <li><a [routerLink]="['pessoas',2]" routerLinkActive="activa">Pessoas Detalhe</a></li>
+        <li><a routerLinkActive="activa" [routerLink]="['accordion']">Accordion</a></li>
+    </ul>
+</nav>
+
 <main>
     <!-- <app-testes></app-testes> -->
     <!-- <app-testesdados></app-testesdados> -->
     <!-- <app-accordion></app-accordion> -->
-    <app-pessoastopo></app-pessoastopo>
+    <!-- <app-pessoastopo></app-pessoastopo> -->
+    <router-outlet></router-outlet>
 </main>
+
 <footer>
     &copy; 2023 Primavera Software
 </footer>

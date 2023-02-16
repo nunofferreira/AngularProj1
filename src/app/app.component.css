@@ -1,0 +1,29 @@
+#menuTopo ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#menuTopo li {
+    display: inline;
+}
+
+#menuTopo a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+#menuTopo a:hover {
+    background-color: red;
+    color: white;
+}
+
+#menuTopo .activa {
+    background-color: red;
+    color: white;
+}

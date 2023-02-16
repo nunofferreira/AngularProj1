@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Accordion2testComponent } from './accordion2test.component';
+import { PaginaerroComponent } from './paginaerro.component';
 
-describe('Accordion2testComponent', () => {
-  let component: Accordion2testComponent;
-  let fixture: ComponentFixture<Accordion2testComponent>;
+describe('PaginaerroComponent', () => {
+  let component: PaginaerroComponent;
+  let fixture: ComponentFixture<PaginaerroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Accordion2testComponent ]
+      declarations: [ PaginaerroComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Accordion2testComponent);
+    fixture = TestBed.createComponent(PaginaerroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

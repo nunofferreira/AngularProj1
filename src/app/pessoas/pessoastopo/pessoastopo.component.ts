@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pessoa } from 'src/app/shared/pessoa.type';
 // import { pessoas } from 'src/app/shared/pessoas';
 import { ServpessoasService } from 'src/app/shared/servpessoas.service';
@@ -15,7 +16,7 @@ export class PessoastopoComponent implements OnInit {
   listaPessoas!: Pessoa[];
 
   //dependency injection 
-  constructor(private servpessoas: ServpessoasService) { }
+  constructor(private servpessoas: ServpessoasService, private router: Router) { }
 
   ngOnInit() {
     // this.listaPessoasOriginal = this.servpessoas.lerDados();
@@ -56,4 +57,10 @@ export class PessoastopoComponent implements OnInit {
     this.servpessoas.novaPessoa(pessoa);
     // this.listaPessoas = this.servpessoas.lerDados();
   }
+
+  showDetails(id: number) {
+    // this.router.navigateByUrl(`pessoas/${id}`);
+    this.router.navigate(['pessoas', id]);
+  }
+
 }

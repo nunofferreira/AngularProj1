@@ -33,6 +33,11 @@ export class ServpessoasService {
     // this.listaPessoas.push(pessoa);
 
     this.listaPessoas.push({ ...pessoa, id: 4 });
+    // criar um novo obj, com o conteúdo do obj pessoa (...), mais uma nova propriedade com o valor 4. 
+  }
+
+  infoPessoa(id: number): Pessoa {
+    return this.listaPessoas.filter(pessoa => pessoa.id === id)[0];
   }
 
 }

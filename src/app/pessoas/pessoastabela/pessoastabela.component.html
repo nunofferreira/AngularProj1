@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pessoa of listaPessoas">
+        <tr *ngFor="let pessoa of listaPessoas" (click)="mostraDetalhe(pessoa.id!)">
             <td>{{ pessoa.nome }}</td>
             <td>{{ pessoa.idade }}</td>
             <td>{{ pessoa.data_nascimento | date : 'yyyy-MM-dd'}}</td>

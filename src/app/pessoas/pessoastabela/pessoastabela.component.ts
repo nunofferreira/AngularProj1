@@ -10,10 +10,16 @@ export class PessoastabelaComponent {
 
   @Input() listaPessoas: Pessoa[] = [];
   @Output() idAEliminar: EventEmitter<number> = new EventEmitter();
+  @Output() idDetalhe: EventEmitter<number> = new EventEmitter();
 
   eliminaPessoa(id: number | undefined) {
     // id - payload
     this.idAEliminar.emit(id);
+  }
+
+  mostraDetalhe(id: number) {
+    console.log(id);
+    this.idDetalhe.emit(id);
   }
 
 }
