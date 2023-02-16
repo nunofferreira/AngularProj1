@@ -1,0 +1,6 @@
+<!-- indice=index -->
+<ng-container *ngFor="let item of itens; index as indice">
+    <!-- <app-item [titulo]="item.title" [conteudo]="item.content" [indice]="indice" (valor)="processaIndice($event)"> -->
+    <app-item [info]="item" [indice]="indice" (valor)="processaIndice($event)">
+    </app-item>
+</ng-container>

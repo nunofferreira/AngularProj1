@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccordionComponent } from './accordion/accordion/accordion.component';
+import { TesteaccordionComponent } from './accordion1/testeaccordion/testeaccordion.component';
+import { Accordion2testComponent } from './accordion2/accordion2test/accordion2test.component';
 import { HomeComponent } from './core/home/home.component';
 import { PaginaerroComponent } from './core/paginaerro/paginaerro.component';
 import { PessoadetalheComponent } from './pessoas/pessoadetalhe/pessoadetalhe.component';
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'pessoas', component: PessoastopoComponent },
   { path: 'pessoas/:id', component: PessoadetalheComponent },
   { path: 'accordion', component: AccordionComponent },
+  { path: 'accordion1', component: TesteaccordionComponent },
+  { path: 'accordion2', component: Accordion2testComponent },
   { path: '**', component: PaginaerroComponent }
 ];
 

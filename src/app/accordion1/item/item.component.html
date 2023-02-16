@@ -1,0 +1,3 @@
+<h2 (click)="processa()">{{ info.title }}</h2>
+<!-- <section *ngIf="activo">{{ info.content }}</section> -->
+<section *ngIf="activo" [innerHTML]="info.content"></section>

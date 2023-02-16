@@ -1,0 +1,7 @@
+<ng-container *ngFor="let item of itens; index as indice">
+    <app-accordion2item>
+        <!-- content projection -->
+        <h2 (click)="processa(indice)">{{ item.title }}</h2>
+        <section [innerHTML]="item.content"></section>
+    </app-accordion2item>
+</ng-container>

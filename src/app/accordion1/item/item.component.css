@@ -1,0 +1,13 @@
+h2 {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+}
+
+section {
+    border: 1px solid #000;
+    padding: 20px;
+}
