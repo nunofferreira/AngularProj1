@@ -14,6 +14,8 @@
     background-color: yellow;
 }
 
+/* ↑↑↑ só aplica a elementos que têm as duas classes em simultâneo - sem espaço entre as classes*/
+
 .identificaObrigatorio {
     display: none;
     color: aquamarine;
@@ -22,3 +24,13 @@
 .ng-touched.ng-invalid:not(form)~span {
     display: inline;
 }
+
+/* ↑↑↑ o símbolo '~' significa 'irmãos mais novos'.
+Neste caso vai aplicar a todos os irmãos que vierem a seguir ao span.
+
+'+' é 'o irmão a seguir'.
+
+li + li → vai aplicar a todos os irmãos a seguir, exceto o último.
+Porque todos os li têm um irmão a seguir exceto o último. 
+É o mesmo que not:last-child
+*/

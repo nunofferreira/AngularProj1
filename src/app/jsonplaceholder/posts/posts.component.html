@@ -1,0 +1,35 @@
+<p *ngIf="listaPosts.length===0">Não existem posts que obedeçam ao critério de pesquisa!</p>
+
+<table id="tabelaDados" *ngIf="listaPosts.length>0">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let post of listaPosts" (click)="mostraDetalhe(post.id)">
+            <td>{{ post.userId }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">
+                <h2>Total de Posts: {{ listaPosts.length }}</h2>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+<!-- <app-dialogbox></app-dialogbox> -->
+<section id="dialogBox" [hidden]="esconde">
+    <section id="dialogBoxContent">
+        <p><strong>userId:</strong>{{ info.userId }}</p>
+        <p><strong>Title:</strong>{{ info.title }}</p>
+        <p><strong>Body:</strong>{{ info.body }}</p>
+        <p><button type="button" (click)="fechaDialog()">OK</button></p>
+    </section>
+</section>

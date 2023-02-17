@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { AppComponent } from './app.component';
 import { TestesComponent } from './testes/testes/testes.component';
 import { TestesdadosComponent } from './testes/testesdados/testesdados.component';
 import { PessoastopoComponent } from './pessoas/pessoastopo/pessoastopo.component';
@@ -21,6 +22,8 @@ import { TesteaccordionComponent } from './accordion1/testeaccordion/testeaccord
 import { Accordion2Component } from './accordion2/accordion2/accordion2.component';
 import { Accordion2itemComponent } from './accordion2/accordion2item/accordion2item.component';
 import { Accordion2testComponent } from './accordion2/accordion2test/accordion2test.component';
+import { PostsComponent } from './jsonplaceholder/posts/posts.component';
+import { DialogboxComponent } from './jsonplaceholder/dialogbox/dialogbox.component';
 
 @NgModule({
   declarations: [
@@ -41,13 +44,16 @@ import { Accordion2testComponent } from './accordion2/accordion2test/accordion2t
     TesteaccordionComponent,
     Accordion2Component,
     Accordion2itemComponent,
-    Accordion2testComponent
+    Accordion2testComponent,
+    PostsComponent,
+    DialogboxComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

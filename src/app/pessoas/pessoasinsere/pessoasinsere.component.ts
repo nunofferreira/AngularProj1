@@ -17,6 +17,7 @@ export class PessoasinsereComponent implements OnInit {
     this.formPessoas = new FormGroup({
       //new FormControl(default_value, validators/options),
       nome: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      // para usar mais que um validator usa-se a sintaxe acima ↑↑↑
       idade: new FormControl(null, Validators.required),
       data_nascimento: new FormControl('', Validators.required),
       casado: new FormControl(false)
@@ -24,6 +25,9 @@ export class PessoasinsereComponent implements OnInit {
   }
 
   /*
+
+  Classes CSS de validação do Angular
+  
   ng-touched/ng-untouched - se o utilizador já entrou e saíu do campo
   ng-pristine/ng-dirty - se o utilizador já escreveu algum conteúdo no campo
   ng-valid/ng-invalid - aplicado caso exista um validator associado ao campo 

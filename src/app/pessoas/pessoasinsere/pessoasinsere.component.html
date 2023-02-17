@@ -5,6 +5,7 @@
     <small *ngIf="nome?.touched && nome?.invalid">
         <ng-container *ngIf="nome?.hasError('required')">O campo 'Nome' é de
             preenchimento obrigatório!</ng-container>
+        <!-- ↓↓ esta sintaxe é mais antiga ↓↓ -->
         <ng-container *ngIf="nome?.errors?.['minlength']">O campo 'Nome' tem que possuir no mínimo 3
             caracteres!</ng-container>
     </small>
@@ -22,8 +23,14 @@
 </form>
 
 <!-- para efeitos de debugging -->
+<hr>
 <pre>{{ formPessoas.value | json }}</pre>
+<hr>
 <pre>{{ formPessoas.status | json }}</pre>
+<hr>
 <pre>{{ formPessoas.valid | json }}</pre>
+<hr>
 <pre>{{ formPessoas.invalid | json }}</pre>
+<hr>
 <pre>Nome - Invalid: {{ formPessoas.get('nome')?.invalid }}</pre>
+<hr>
