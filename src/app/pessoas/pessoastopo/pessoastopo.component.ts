@@ -1,27 +1,35 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Pessoa } from 'src/app/shared/pessoa.type';
-// import { pessoas } from 'src/app/shared/pessoas';
 import { ServpessoasService } from 'src/app/shared/servpessoas.service';
+// import { pessoas } from 'src/app/shared/pessoas';
 
 @Component({
   selector: 'app-pessoastopo',
   templateUrl: './pessoastopo.component.html',
   styleUrls: ['./pessoastopo.component.css']
 })
-export class PessoastopoComponent implements OnInit {
+export class PessoastopoComponent implements OnInit, OnDestroy {
   // listaPessoasOriginal: Pessoa[] = pessoas;
   // listaPessoas: Pessoa[] = pessoas;
-  listaPessoasOriginal!: Pessoa[];
+  // listaPessoasOriginal!: Pessoa[];
   listaPessoas!: Pessoa[];
 
+  vPesquisa: string = '';
+
   //dependency injection 
-  constructor(private servpessoas: ServpessoasService, private router: Router) { }
+  constructor(private servpessoas: ServpessoasService, private router: Router, private rotaAtiva: ActivatedRoute) { }
 
   ngOnInit() {
     // this.listaPessoasOriginal = this.servpessoas.lerDados();
     // this.listaPessoas = [...this.listaPessoasOriginal];
     this.listaPessoas = this.servpessoas.lerDados();
+
+    this.vPesquisa = this.rotaAtiva.snapshot.queryParams['valorPesquisa'];
+    console.log(this.vPesquisa);
+    if (typeof this.vPesquisa !== "undefined") {
+      this.pesquisar(this.vPesquisa);
+    }
   }
 
   deletePessoa(id: number) {
@@ -51,6 +59,7 @@ export class PessoastopoComponent implements OnInit {
     //   this.listaPessoas = this.listaPessoasOriginal.filter(pessoa => pessoa.nome.toUpperCase().includes(pesquisa.toUpperCase()));
     // }
     this.listaPessoas = this.servpessoas.pesquisaPessoas(pesquisa);
+    this.vPesquisa = pesquisa;
   }
 
   inserePessoa(pessoa: Pessoa) {
@@ -59,8 +68,19 @@ export class PessoastopoComponent implements OnInit {
   }
 
   showDetails(id: number) {
-    // this.router.navigateByUrl(`pessoas/${id}`);
-    this.router.navigate(['pessoas', id]);
+    if (this.vPesquisa === '') {
+      this.router.navigate(['pessoas', id]);
+    } else {
+      this.router.navigate(['pessoas', id], {
+        queryParams: {
+          valorPesquisa: this.vPesquisa
+        }
+      });
+    }
+    // this.router.navigateByUrl(`pessoas/${id})`);
   }
 
+  ngOnDestroy() {
+    console.log("componente pessoastopo destruido.")
+  }
 }

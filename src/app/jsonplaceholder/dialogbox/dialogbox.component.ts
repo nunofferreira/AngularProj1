@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Post } from '../post.model';
 
 @Component({
   selector: 'app-dialogbox',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class DialogboxComponent {
 
+  @Input() esconde!: boolean;
+  @Input() post!: Post;
+  @Output() close = new EventEmitter<boolean>();
+
+  onClose() {
+    this.close.emit(true);
+    this.esconde = true;
+  }
 }

@@ -13,7 +13,6 @@ export class PostsComponent implements OnInit {
   listaPosts: Post[] = [];
   info: Post = { id: 0, userId: 0, title: '', body: '', }
 
-
   constructor(private servposts: PostserviceService) { }
 
   ngOnInit() {
@@ -23,20 +22,21 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  mostraDetalhe(id: number) {
-    console.log(id);
+  mostraDetalhe(post: Post) {
+    // console.log(id);
     // let infoPost = this.listaPosts.filter(post => post.id === id)[0];
     // this.info.id = infoPost.id;
     // this.info.userId = infoPost.userId;
     // this.info.title = infoPost.title;
     // this.info.body = infoPost.body;
 
-    this.info = this.listaPosts.filter(post => post.id === id)[0];
-
+    this.info = post;
+    // console.log(this.info);
     this.esconde = false;
   }
 
   fechaDialog() {
     this.esconde = true;
+    // console.log('Dialog box closed!')
   }
 }

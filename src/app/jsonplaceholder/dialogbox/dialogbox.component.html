@@ -1,1 +1,9 @@
-<p>dialogbox works!</p>
+<section id="dialogBox" [hidden]="esconde">
+    <section id="dialogBoxContent">
+        <!-- <p><strong>userId:</strong>{{ post.userId }}</p>
+        <p><strong>Title:</strong>{{ post.title }}</p>
+        <p><strong>Body:</strong>{{ post.body }}</p> -->
+        <ng-content></ng-content>
+        <p><button type="button" (click)="onClose()">OK</button></p>
+    </section>
+</section>
